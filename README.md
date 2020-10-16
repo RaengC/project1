@@ -1,24 +1,26 @@
-# README
+# Twitter Clone
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Summary
+Class project to create an application with
+* minimum three models.
+* Handling of invalid data.
+* Use of Gems that talks to API to add functionality
+* User login and authentication
+* Heroku deployment
 
-Things you may want to cover:
+## User Stories with Associated Technical Tasks
+[Trello Link with associated **To Do, Doing, Done**](https://trello.com/invite/b/dXFoKPrs/53f75cd874588a844ab4c7cb5db3b161/twitter-clone)
 
-* Ruby version
+### Key Stories
+* User creates account
+* User can follow or be followed
+* User can post stories
 
-* System dependencies
+### Future Stories
+* User can search news sources through account
 
-* Configuration
+## Technology Utilised
+### Backend
+* Ruby version 2.7.2
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Frontend
