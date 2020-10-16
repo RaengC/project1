@@ -1,6 +1,14 @@
 <h1>Users#new</h1>
 <p>Find me in app/views/users/new.html.erb</p>
 
+<% if @user.errors.any? %>
+  <ol>
+    <% @user.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ol>
+<% end %>
+
 <%= form_for @user do |f| %>
 <%= f.label :email %>
 <%= f.email_field :email %>
