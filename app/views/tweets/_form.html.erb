@@ -1,0 +1,9 @@
+<%= form_for @tweet do |f| %>
+  <%= f.label :content %>
+  <%= f.text_field :content  %>
+
+  <%= f.label :image %>
+  <%= f.url_field :image %>
+
+  <%= f.submit %>
+<% end %>
