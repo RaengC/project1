@@ -4,3 +4,8 @@
   <li><%= @tweet.content %></li>
   <li><%= image_tag @tweet.image, :class => 'thumb' %></li>
 </ul>
+
+<div class="controls">
+  <%= link_to "Edit", edit_tweet_path(@tweet) %>
+  <%= button_to "Delete", @tweet, :method => 'delete', :data => { :confirm => 'Are you sure?'} %>
+</div>
