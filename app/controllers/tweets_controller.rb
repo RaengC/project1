@@ -1,8 +1,8 @@
 class TweetsController < ApplicationController
   before_action :check_for_login
-  
+
   def index
-      @tweets = Tweet.all
+    @tweets = Tweet.all
   end
 
   def show

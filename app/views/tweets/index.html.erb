@@ -2,7 +2,7 @@
 
 <% @tweets.each do |tweet| %>
 <ul>
-  <li>Need to add user name once assocations added</li>
+  <li>Tweet by: <%= tweet.name %></li>
   <li><%= link_to tweet.content, tweet %></li>
   <li><%= image_tag tweet.image, :class => 'thumb' if tweet.image.present? %></li>
 </ul>
