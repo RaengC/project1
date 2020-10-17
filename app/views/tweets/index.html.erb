@@ -1,1 +1,9 @@
-<h2>tweet index</h2>
+<h2>User Tweets</h2>
+
+<% @tweets.each do |tweet| %>
+<ul>
+  <li>Need to add user name once assocations added</li>
+  <li><%= link_to tweet.content %></li>
+  <li><%= image_tag tweet.image, :class => 'thumb' if tweet.image.present? %></li>
+</ul>
+<% end %>
