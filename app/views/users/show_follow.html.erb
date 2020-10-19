@@ -1,0 +1,8 @@
+<h2>Followers/Following</h2>
+
+
+<% if @user.followed_users.present? %>
+<% @user.followers.each do |follower| %>
+  <li><%= link_to follower.name, follower %></li>
+  <% end %>
+<% end %>

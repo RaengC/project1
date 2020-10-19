@@ -6,6 +6,7 @@
     <li>Tweet by: <%= tweet.name %></li>
     <li><%= link_to tweet.content, tweet %></li>
     <li><%= image_tag tweet.image, :class => 'thumb' if tweet.image.present? %></li>
+
   </ul>
 
 <% end %>
