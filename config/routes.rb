@@ -3,7 +3,13 @@ Rails.application.routes.draw do
   get 'users/new'
   root :to => 'pages#home'
 
-  resources :users, :only => [:new, :create]
+  # resources :users, :only => [:new, :create]
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
+
   resources :tweets
 
   get '/login' => 'session#new'
