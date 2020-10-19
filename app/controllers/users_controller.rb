@@ -21,15 +21,13 @@ class UsersController < ApplicationController
   def following
     @title = "Following"
     @user = User.find(params[:id])
-    @users = @user.followed_users user_params
-    render :show_follow
+    @users = @user.followed_users
   end
 
   def followers
     @title = "Followers"
     @user = User.find(params[:id])
-    @users = @user.followers user_params
-    render :show_follow
+    @users = @user.followers
   end
 
   def following?(other_user)
