@@ -1,11 +1,35 @@
-<h2>Tweet </h2>
+<h2>Tweet</h2>
 
 <ul>
+  <li>Tweet by: <%= link_to "#{@tweet.user.name}", user_path(@tweet.user.id) %></li>
   <li><%= @tweet.content %></li>
   <li><%= image_tag @tweet.image, :class => 'thumb' %></li>
-</ul>
 
-<div class="controls">
-  <%= link_to "Edit", edit_tweet_path(@tweet) %>
-  <%= button_to "Delete", @tweet, :method => 'delete', :data => { :confirm => 'Are you sure?'} %>
-</div>
+  <h3>Comments</h3>
+  <% @tweet.comments.each do |comment| %>
+    <p>
+      <strong>Commenter: </strong>
+      <%= comment.commenter %>
+    </p>
+    <p>
+      <strong>Comment: </strong>
+      <%= comment.body %>
+    </p>
+  <% end %>
+
+  <h3>Add a comment</h3>
+  <%= form_with(model: [ @tweet, @tweet.comments.build], local: true) do |f| %>
+    <p>
+      <%= f.label :commenter %><br>
+      <%= f.text_area :commenter %>
+    </p>
+    <p>
+      <%= f.label :body %><br>
+      <%= f.text_area :body %>
+    </p>
+    <p>
+      <%= f.submit %>
+    </p>
+  <% end %>
+  <%= link_to 'Back', tweets_path %>
+</ul>

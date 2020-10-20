@@ -5,8 +5,8 @@
         <li>Tweet by: <%= link_to "#{tweet.user.name}", user_path(tweet.user.id)  %></li>
         <li><%= tweet.content %></li>
         <li><%= image_tag tweet.image, :class => 'thumb' if tweet.image.present? %></li>
-        <li><%= link_to "Edit", edit_tweet_path(tweet) %></li>
-        <li> <%= link_to "Delete", tweet, :method => 'delete', :data => { :confirm => 'Are you sure?'} %></li>
+        <li><%= link_to "Edit", edit_tweet_path(tweet) %> |
+        <%= link_to "Delete", tweet, :method => 'delete', :data => { :confirm => 'Are you sure?'} %></li>
       </ul>
       <% end %>
 </div>
