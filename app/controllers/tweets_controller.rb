@@ -16,7 +16,7 @@ class TweetsController < ApplicationController
   def create
     tweet = Tweet.create tweet_params
     @current_user.tweets << tweet
-    redirect_to tweet
+    redirect_to tweets_path
   end
 
   def edit
@@ -32,7 +32,7 @@ class TweetsController < ApplicationController
   def destroy
     tweet = Tweet.find params[:id]
     tweet.destroy
-    redirect_to tweets_path
+    redirect_to @current_user
   end
 
   private
