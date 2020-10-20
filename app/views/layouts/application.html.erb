@@ -14,8 +14,8 @@
       <nav>
         <%= link_to "Home", root_path %>
         <% if @current_user.present? %>
-           <%= link_to "Profile Page", user_path(@current_user.id) %>
           <%= link_to "Tweets", tweets_path %>
+          <%= link_to "Profile Page", user_path(@current_user.id) %>
           <%= link_to "Add Tweet", new_tweet_path %>
           <%= link_to "Logout #{ @current_user[:name]}", login_path, :method => 'delete' %>
           <% else %>

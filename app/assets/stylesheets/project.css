@@ -1,6 +1,10 @@
 
 .thumb {
-  height: 12em;
+  height: 9em;
+}
+
+ul {
+  list-style-type: none;
 }
 /*
 .stats {
