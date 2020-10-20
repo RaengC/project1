@@ -16,6 +16,17 @@
   </aside>
 
   <div class="span8">
-    <%= render 'users/follow_form' if @current_user.present? %>
+    <%= render 'users/follow_form' if @current_user.present?  %>
   </div>
 </div>
+
+<h2>Your Tweets</h2>
+
+  <% @user.tweets.each do |tweet|  %>
+  <ul>
+    <li>Tweet by: <%= link_to "#{tweet.user.name}", user_path(tweet.user.id)  %></li>
+    <li><%= tweet.content %></li>
+    <li><%= image_tag tweet.image, :class => 'thumb' if tweet.image.present? %></li>
+  </ul>
+
+<% end %>
