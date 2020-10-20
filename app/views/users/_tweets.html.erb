@@ -1,0 +1,15 @@
+<h2>Tweets</h2>
+
+  <% @user.tweets.each do |tweet|  %>
+  <ul>
+    <li>Tweet by: <%= link_to "#{tweet.user.name}", user_path(tweet.user.id)  %></li>
+    <li><%= tweet.content %></li>
+    <li><%= image_tag tweet.image, :class => 'thumb' if tweet.image.present? %></li>
+  </ul>
+
+  <div>
+    <%= link_to "Edit", edit_tweet_path(tweet) %>
+    <%= button_to "Delete", tweet, :method => 'delete', :data => { :confirm => 'Are you sure?'} %>
+  </div>
+
+<% end %>

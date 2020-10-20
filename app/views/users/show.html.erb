@@ -1,37 +1,26 @@
-<h2>Profile Page <%= @user.name %> </h2>
 
 <% provide(:title, @user.name) %>
-<div class="row">
-  <aside class="span4">
-    <section>
-      <h1>
-        <%= image_tag @user %>
-        <%= @user.name %>
-      </h1>
-    </section>
+<div class="container">
+  <div class="row">
+    <aside class="span4">
+      <section>
+        <h1>
+          <%= image_tag @user %>
+          <%= @user.name %>
+        </h1>
+      </section>
 
-    <section>
-      <%= render 'users/stats' %>
-    </section>
-  </aside>
+      <section>
+        <%= render 'users/stats' %>
+      </section>
+    </aside>
 
-  <div class="span8">
-    <%= render 'users/follow_form' if @current_user.present?  %>
+    <div class="span8">
+      <%= render 'users/follow_form' if @current_user.present?  %>
+    </div>
   </div>
+
+  <section>
+    <%= render 'tweets' %>
+  </section>
 </div>
-
-<h2>Your Tweets</h2>
-
-  <% @user.tweets.each do |tweet|  %>
-  <ul>
-    <li>Tweet by: <%= link_to "#{tweet.user.name}", user_path(tweet.user.id)  %></li>
-    <li><%= tweet.content %></li>
-    <li><%= image_tag tweet.image, :class => 'thumb' if tweet.image.present? %></li>
-  </ul>
-
-  <div>
-    <%= link_to "Edit", edit_tweet_path(tweet) %>
-    <%= button_to "Delete", tweet, :method => 'delete', :data => { :confirm => 'Are you sure?'} %>
-  </div>
-
-<% end %>
