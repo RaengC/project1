@@ -1,0 +1,12 @@
+<h2>Followers page</h2>
+
+<div class="stats">
+  <% if @user.followers.present? %>
+  <%= "You have #{@user.followers.count} followers: " %>
+    <% @user.followers.each do |follower| %>
+      <li><%= link_to follower.name, follower %></li>
+    <% end %>
+    <% else %>
+      <%= "You have zero followers." %>
+  <% end %>
+  </div>

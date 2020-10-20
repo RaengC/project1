@@ -10,28 +10,3 @@
       <%= @user.followers.count %>
     </strong> followers </a>
 </div>
-
-
-
-<!-- below list of followers/following -->
-<div class="stats">
-<% if @user.followed_users.present? %>
-  <%= "#{@user.name} you are following #{@user.followed_users.count } users: "%>
-    <% @user.followed_users.each do |followed| %>
-      <li><%= link_to followed.name, followed %></li>
-    <% end %>
-    <% else %>
-      <%= "You are not following anyone." %>
-<% end %>
-</div>
-
-<div class="stats">
-  <% if @user.followers.present? %>
-  <%= "You have #{@user.followers.count} followers: " %>
-    <% @user.followers.each do |follower| %>
-      <li><%= link_to follower.name, follower %></li>
-    <% end %>
-    <% else %>
-      <%= "You have zero followers." %>
-  <% end %>
-  </div>

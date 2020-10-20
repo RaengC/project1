@@ -1,0 +1,12 @@
+<h2>Following</h2>
+
+<div class="stats">
+<% if @user.followed_users.present? %>
+  <%= "#{@user.name} you are following #{@user.followed_users.count } users: "%>
+    <% @user.followed_users.each do |followed| %>
+      <li><%= link_to followed.name, followed %></li>
+    <% end %>
+    <% else %>
+      <%= "You are not following anyone." %>
+<% end %>
+</div>
