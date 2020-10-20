@@ -1,8 +1,8 @@
 
-<% provide(:title, @user.name) %>
+
 <div class="container">
   <div class="row">
-    <aside class="span4">
+    <div class="col-md-4">
       <section>
         <h1>
           <%= image_tag @user %>
@@ -13,14 +13,20 @@
       <section>
         <%= render 'users/stats' %>
       </section>
-    </aside>
+    </div>
 
-    <div class="span8">
-      <%= render 'users/follow_form' if @current_user.present?  %>
+    <div class="col-md-8">
+      <section>
+        <%= render 'users/follow_form' if @current_user.present?  %>
+      </section>
+
     </div>
   </div>
 
-  <section>
-    <%= render 'tweets' %>
-  </section>
+  <div class="row">
+    <section>
+      <%= render 'tweets' %>
+    </section>
+  </div>
+
 </div>
