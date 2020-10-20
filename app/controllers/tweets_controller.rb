@@ -26,7 +26,7 @@ class TweetsController < ApplicationController
   def update
     tweet = Tweet.find params[:id]
     tweet.update tweet_params
-    redirect_to tweets_path
+    redirect_to @current_user
   end
 
   def destroy

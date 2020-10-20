@@ -29,4 +29,8 @@
     <li><%= image_tag tweet.image, :class => 'thumb' if tweet.image.present? %></li>
   </ul>
 
+  <div>
+    <%= link_to "edit", edit_tweet_path(tweet) %>
+  </div>
+
 <% end %>
