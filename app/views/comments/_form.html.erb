@@ -1,7 +1,7 @@
 <%= form_with(model: [ @tweet, @tweet.comments.build], local: true) do |f| %>
 
   <p>
-    <%= f.label :body %><br>
+    <%= f.label :Comment %><br>
     <%= f.text_area :body %>
   </p>
   <p>

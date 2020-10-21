@@ -1,9 +1,3 @@
 <h2>Tweets</h2>
 
-  <% @tweets.each do |tweet|  %>
-  <ul>
-    <li>Tweet by: <%= link_to "#{tweet.user.name}", user_path(tweet.user.id)  %></li>
-    <li><%= link_to "#{tweet.content}", tweet_path(tweet.id) %></li>
-    <li><%= image_tag tweet.image, :class => 'thumb' if tweet.image.present? %></li>
-  </ul>
-  <% end %>
+<%= render 'tweets' %>
