@@ -2,7 +2,11 @@
 <div class="span4">
 <h1>
   <div class="profile">
+    <% if @user.image.present? %>
     <%= image_tag @user.image, :class => 'icon' %>
+    <% else %>
+      <%= image_tag 'empty-profile-picture.png', :class => 'icon' %>
+      <% end %>
     <%= @user.name %>
   </div>
   <div class="profile">

@@ -5,13 +5,12 @@
   <li><%= link_to "#{tweet.content}", tweet_path(tweet.id) %></li>
   <li><%= image_tag tweet.image, :class => 'thumb' if tweet.image.present? %></li>
 
-<% tweet.comments.each do |comment| %>
+  <% tweet.comments.each do |comment| %>
   <p>
     <strong><%= comment.user.name %></strong>: <%= comment.body %>
   </p>
 
   <% end %>
-
 
   <%= form_with(model: [ tweet, tweet.comments.build], local: true) do |f| %>
     <p>
