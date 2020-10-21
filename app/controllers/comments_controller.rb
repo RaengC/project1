@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
       @tweet = Tweet.find(params[:tweet_id])
       @comment = @tweet.comments.create(comment_params)
       @current_user.comments << @comment
-      redirect_to tweet_path(@tweet)
+      redirect_to tweets_path(@tweet)
   end
 
   def destroy
