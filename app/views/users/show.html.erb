@@ -11,7 +11,7 @@
     </div>
 
     <div class="profile">
-        <%= render 'users/follow_form' if @current_user.present?  %>
+        <%= render 'follow_form' if @current_user.present?  %>
     </div>
   </h1>
 
@@ -21,7 +21,7 @@
 
 <br>
 <section>
-  <%= render 'users/stats' %>
+  <%= render 'stats' %>
 </section>
 
 <section>

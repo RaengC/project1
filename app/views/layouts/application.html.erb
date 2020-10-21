@@ -8,38 +8,39 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%# <%= cloudinary_js_config %>
   </head>
 
   <body>
     <div class="navbar">
-      <%= link_to "Home", root_path %>
       <% if @current_user.present? %>
         <%= link_to "Tweets", tweets_path %>
         <%= link_to "Add Tweet", new_tweet_path %>
         <% else %>
+          <%= link_to "Home", root_path %>
           <%= link_to 'Sign Up', new_user_path %>
           <%= link_to "Login", login_path %>
       <% end %>
-    <div class="dropdown">
-      <% if @current_user.present? %>
-      <button class="dropbtn"><%= @current_user.name %>
-        <i class="fa fa-caret-down"></i>
-      </button>
-      <% else %>
-        <button class="dropbtn">Profile
+      <div class="dropdown">
+        <% if @current_user.present? %>
+        <button class="dropbtn"><%= @current_user.name %>
           <i class="fa fa-caret-down"></i>
         </button>
-        <% end %>
-        <div class="dropdown-content">
-          <% if @current_user.present? %>
-            <%= link_to "Profile Page", user_path(@current_user.id) %>
-            <%= link_to "Update Profile", edit_user_path(@current_user) %>
-            <%= link_to "Logout #{ @current_user[:name]}", login_path, :method => 'delete' %>
-            <% else %>
-              <%= link_to 'Sign Up', new_user_path %>
-              <%= link_to "Login", login_path %>
+        <% else %>
+          <button class="dropbtn">Profile
+            <i class="fa fa-caret-down"></i>
+          </button>
           <% end %>
-        </div>
+          <div class="dropdown-content">
+            <% if @current_user.present? %>
+              <%= link_to "Profile Page", user_path(@current_user.id) %>
+              <%= link_to "Update Profile", edit_user_path(@current_user) %>
+              <%= link_to "Logout #{ @current_user[:name]}", login_path, :method => 'delete' %>
+              <% else %>
+                <%= link_to 'Sign Up', new_user_path %>
+                <%= link_to "Login", login_path %>
+            <% end %>
+          </div>
       </div>
     </div>
 

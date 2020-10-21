@@ -16,6 +16,11 @@ class TweetsController < ApplicationController
   def create
     tweet = Tweet.create tweet_params
     @current_user.tweets << tweet
+    # if params[:file].present?
+    #   req = Cloudinary::Uploader.upload(params[:file])
+    #   tweet.image = req["public_id"]
+    #   tweet.save
+    # end
     redirect_to tweets_path
   end
 
@@ -25,6 +30,10 @@ class TweetsController < ApplicationController
 
   def update
     tweet = Tweet.find params[:id]
+    # if params[:file].present?
+    #   req = Cloudinary::Uploader.upload(params[:file])
+    #   tweet.image = req["public_id"]
+    # end
     tweet.update tweet_params
     redirect_to @current_user
   end
