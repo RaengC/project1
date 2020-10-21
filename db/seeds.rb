@@ -4,12 +4,13 @@ u2 = User.create(:name => 'Teddy', :email => 'teddy@ga.co', :password => 'chicke
 u3 = User.create(:name => 'Joel', :email => 'joel@ga.co', :password => 'chicken')
 u4 = User.create(:name => 'Tony', :email => 'tony@ga.co', :password => 'chicken')
 u5 = User.create(:name => 'Bruce', :email => 'batman@ga.co', :password => 'chicken')
-u6 = User.create(:name => 'Riply', :email => 'riply@ga.co', :password => 'chicken')
+u6 = User.create(:name => 'Riply', :email => 'riply@ga.co', :password => 'chicken', :bio => 'I was born on October 8th, 2092 at the Olympia colony on Luna. I had one daughter, Amanda Ripley-McClaren. Sometime prior to 2122, I was hired as a Warrant Officer for the Weyland-Yutani commercial hauler USCSS Nostromo.', :title => 'Best Action Hero Ever', :image => 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQGPvRytlowGjEFpizZXxSHx2BO9zbvPxLxeA&usqp=CAU')
 u7 = User.create(:name => 'Alien', :email => 'alien@ga.co', :password => 'chicken')
 u8 = User.create(:name => 'Hit-Girl', :email => 'hit_girl@ga.co', :password => 'chicken')
 
 puts "#{ User.count} users created"
 
+Comment.destroy_all
 Tweet.destroy_all
 t1 = Tweet.create(:content => 'I bought these ones for my mother, what do you think?', :image => 'https://images.unsplash.com/photo-1550237330-a5d774594098?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')
 t2 = Tweet.create(:content => "A quick and simple service for getting pictures of kittens for use as placeholders in your designs or code. Just put your image size (width & height) after our URL and you'll get a placeholder.", :image => 'http://placekitten.com/200/300')

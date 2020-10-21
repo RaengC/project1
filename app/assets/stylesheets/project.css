@@ -1,4 +1,11 @@
+/* * {border: 1px solid green;} */
 
+body {
+  margin: 0;
+}
+h1 {
+  margin: 12px 0 12px;
+}
 .container {
   display: flex;
   flex-direction: column;
@@ -21,10 +28,23 @@ ul {
   border: 2px solid black;
 }
 
+li {
+    list-style-type: none;
+}
+
 .form-group {
 
 }
 
+.icon {
+  height: 2em;
+  border-radius: 35px;
+}
+
+.profile {
+  display: inline-block;
+
+}
 
 /* Navbar container */
 .navbar {
@@ -95,32 +115,3 @@ ul {
 .dropdown:hover .dropdown-content {
   display: block;
 }
-/*
-.stats {
-  overflow: auto;
-  a {
-    float: left;
-    padding: 0 10px;
-    border-left: 1px solid $grayLighter;
-    color: gray;
-    &:first-child {
-      padding-left: 0;
-      border: 0;
-    }
-    &:hover {
-      text-decoration: none;
-      color: $blue;
-    }
-  }
-  strong {
-    display: block;
-  }
-}
-
-.user_avatars {
-  overflow: auto;
-  margin-top: 10px;
-  .gravatar {
-    margin: 1px 1px;
-  }
-} */
