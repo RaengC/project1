@@ -1,7 +1,7 @@
 
 <p>
   <strong>Commenter:</strong>
-  <%= comment.commenter %>
+  <%= comment.user.name %>
 </p>
 
 <p>
@@ -10,7 +10,9 @@
 </p>
 
 <p>
-  <%= link_to 'Destroy Comment', [comment.tweet, comment],
-               method: :delete,
-               data: { confirm: 'Are you sure?' } %>
+  <% if @tweet.user.id == @current_user.id || comment.user_id == @current_user.id %>
+    <%= link_to 'Destroy Comment', [comment.tweet, comment],
+                 method: :delete,
+                 data: { confirm: 'Are you sure?' } %>
+  <% end  %>
 </p>

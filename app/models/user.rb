@@ -3,7 +3,8 @@ class User < ActiveRecord::Base
   validates :email, :presence => true, :uniqueness => true
 
   has_many :tweets, dependent: :destroy
-  
+  has_many :comments
+
   has_many :relationships, foreign_key: "follower_id", dependent: :destroy
   has_many :followed_users, through: :relationships, source: :followed
 
