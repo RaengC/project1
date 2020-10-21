@@ -1,23 +1,26 @@
 <%= form_for @user do |f| %>
   <div class="form-group">
     <%= f.label "user name"%>
-    <%= f.text_field :name, :class => 'form-control' %>
+    <%= f.text_field :name %>
   </div>
 
   <div class="form-group">
     <%= f.label :email %>
-    <%= f.email_field :email, :class => 'form-control' %>
+    <%= f.email_field :email%>
   </div>
 
   <div class="form-group">
     <%= f.label :password %>
-    <%= f.password_field :password, :class => 'form-control' %>
+    <%= f.password_field :password %>
   </div>
 
   <div class="form-group">
     <%= f.label :password_confirmation %>
-    <%= f.password_field "password_confirmation", :class => 'form-control' %>
+    <%= f.password_field "password_confirmation" %>
   </div>
 
+
   <%= f.submit "Create Account" %>
+
+
 <% end %>
