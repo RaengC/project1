@@ -1,4 +1,4 @@
-/* * {border: 1px solid green;} */
+* {border: 1px solid green;}
 
 body {
   margin: 0;
@@ -43,6 +43,19 @@ li {
 
 .profile {
   display: inline-block;
+}
+
+.right-align {
+  justify-content: flex-end;
+}
+
+.space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.align-centre {
+  align-items: center;
 }
 
 /* Style inputs, select elements and textareas */

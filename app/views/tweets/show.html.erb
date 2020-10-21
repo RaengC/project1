@@ -1,12 +1,14 @@
 <h2>Tweet</h2>
 
+  <%= link_to 'Back', tweets_path %>
+
 <ul>
   <li>Tweet by: <%= link_to "#{@tweet.user.name}", user_path(@tweet.user.id) %> | <%= @tweet.created_at.strftime '%A, %B %e, %Y' %></li>
   <li><%= @tweet.content %></li>
-  <li><%= image_tag @tweet.image, :class => 'thumb' %></li>
+  <li><%= cl_image_tag(@tweet.image), :class => 'thumb' %></li>
 
     <%= render @tweet.comments %>
     <%= render 'comments/form' %>
 
-  <%= link_to 'Back', tweets_path %>
+
 </ul>

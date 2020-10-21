@@ -1,7 +1,7 @@
 
-<div class="span4">
+<div class="space-between">
   <h1>
-    <div class="profile">
+    <div class="profile left-align">
       <% if @user.image.present? %>
       <%= image_tag @user.image, :class => 'icon' %>
       <% else %>
@@ -9,20 +9,27 @@
         <% end %>
       <%= @user.name %>
     </div>
-
-    <div class="profile">
+  </h1>
+    <div class="profile right-align align-centre">
         <%= render 'follow_form' if @current_user.present?  %>
     </div>
-  </h1>
 
-  <li><strong><%= @user.title %></strong></li>
-  <li><%= @user.bio %></li>
-  </div>
+</div>
+
+<li><strong><%= @user.title %></strong></li>
+<li><%= @user.bio %></li>
 
 <br>
-<section>
-  <%= render 'stats' %>
-</section>
+<div class="space-between">
+  <div class="profile left-align">
+    <%= render 'stats' %>
+  </div>
+  <div class="profile right-align">
+    <%= link_to 'Back', tweets_path %>
+  </div>
+</div>
+
+
 
 <section>
   <%= render 'tweets' %>
