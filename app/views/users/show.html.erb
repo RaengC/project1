@@ -1,26 +1,28 @@
 
 <div class="span4">
-<h1>
-  <div class="profile">
-    <% if @user.image.present? %>
-    <%= image_tag @user.image, :class => 'icon' %>
-    <% else %>
-      <%= image_tag 'empty-profile-picture.png', :class => 'icon' %>
-      <% end %>
-    <%= @user.name %>
-  </div>
-  <div class="profile">
-      <%= render 'users/follow_form' if @current_user.present?  %>
-  </div>
-</h1>
+  <h1>
+    <div class="profile">
+      <% if @user.image.present? %>
+      <%= image_tag @user.image, :class => 'icon' %>
+      <% else %>
+        <%= image_tag 'empty-profile-picture.png', :class => 'icon' %>
+        <% end %>
+      <%= @user.name %>
+    </div>
+
+    <div class="profile">
+        <%= render 'users/follow_form' if @current_user.present?  %>
+    </div>
+  </h1>
 
   <li><strong><%= @user.title %></strong></li>
   <li><%= @user.bio %></li>
   </div>
-  <br>
-  <section>
-    <%= render 'users/stats' %>
-  </section>
+
+<br>
+<section>
+  <%= render 'users/stats' %>
+</section>
 
 <section>
   <%= render 'tweets' %>
