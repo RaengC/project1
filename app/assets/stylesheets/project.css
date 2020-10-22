@@ -45,6 +45,12 @@ li {
   border-radius: 35px;
 }
 
+.profile-icon {
+  height: 64px;
+  border-radius: 35px;
+}
+
+
 .profile {
   display: inline-block;
   display: flex

@@ -2,7 +2,7 @@
   <ul>
     <li><strong>Tweet by:
       <% if tweet.user.image.present? %>
-      <%= cl_image_tag(tweet.user.image, :width=>32, :height=>32, :gravity=>"face", :radius=>"max", :crop=>"fill", :background=>"#f2f2f2") %>
+      <%= cl_image_tag(tweet.user.image, :class => 'icon') %>
         <% else %>
         <%= image_tag 'empty-profile-picture.png', :class => 'icon' %>
       <% end %>
