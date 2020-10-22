@@ -1,6 +1,6 @@
 <h1>Edit page</h1>
 
-<%= form_for @user do |f| %>
+<%= form_for(@user, :html => {:multipart => true}) do |f| %>
   <div class="form-group">
     <%= f.label "user name"%>
     <%= f.text_field :name %>
@@ -33,7 +33,7 @@
 
   <div class="form-group">
   <%= f.label :image %>
-  <%= f.text_field :image %>
+  <%= f.cl_image_upload :image %>
   </div>
 
   <%= f.submit "Update Account" %>

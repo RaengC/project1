@@ -1,10 +1,19 @@
 <% @tweets.each do |tweet|  %>
 <ul>
-  <li><strong>Tweet by: <%= link_to "#{tweet.user.name}", user_path(tweet.user.id)  %> | <%= tweet.created_at.strftime '%A, %B %e, %Y' %></strong></li>
+  <li><strong>Tweet by:
+    <% if tweet.user.image.present? %>
+    <%= cl_image_tag(tweet.user.image, :width=>32, :height=>32, :gravity=>"face", :radius=>"max", :crop=>"fill", :background=>"#f2f2f2") %>
+      <% else %>
+      <%= image_tag 'empty-profile-picture.png', :class => 'icon' %>
+      <% end %>
+    <%= link_to "#{tweet.user.name}", user_path(tweet.user.id)  %> |
+    <%= tweet.created_at.strftime '%A, %B %e, %Y' %>
+      </strong></li>
 
   <li><%= link_to "#{tweet.content}", tweet_path(tweet.id) %></li>
-  <li><%= image_tag tweet.image, :class => 'thumb' if tweet.image.present? %></li>
-
+  <li><% if tweet.image.present? %>
+        <%= cl_image_tag(tweet.image, :height=>144) %>
+      <% end %>
   <% tweet.comments.each do |comment| %>
   <p>
     <strong><%= comment.user.name %></strong>: <%= comment.body %>

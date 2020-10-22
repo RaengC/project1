@@ -16,6 +16,7 @@
       <% if @current_user.present? %>
         <%= link_to "Tweets", tweets_path %>
         <%= link_to "Add Tweet", new_tweet_path %>
+        <%= link_to "Profile Page", user_path(@current_user.id) %>
         <% else %>
           <%= link_to "Home", root_path %>
           <%= link_to 'Sign Up', new_user_path %>
@@ -33,7 +34,7 @@
           <% end %>
           <div class="dropdown-content">
             <% if @current_user.present? %>
-              <%= link_to "Profile Page", user_path(@current_user.id) %>
+
               <%= link_to "Update Profile", edit_user_path(@current_user) %>
               <%= link_to "Logout #{ @current_user[:name]}", login_path, :method => 'delete' %>
               <% else %>

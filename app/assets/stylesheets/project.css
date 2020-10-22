@@ -1,4 +1,4 @@
-* {border: 1px solid green;}
+/* * {border: 1px solid green;} */
 
 body {
   margin: 0;
@@ -43,10 +43,12 @@ li {
 
 .profile {
   display: inline-block;
+  display: flex
 }
 
 .right-align {
   justify-content: flex-end;
+  align-items: center;
 }
 
 .space-between {
@@ -54,9 +56,9 @@ li {
   justify-content: space-between;
 }
 
-.align-centre {
+/* .align-centre {
   align-items: center;
-}
+} */
 
 /* Style inputs, select elements and textareas */
 input[type=text], input[type=password], input[type=email], input[class=form-control], select, textarea {

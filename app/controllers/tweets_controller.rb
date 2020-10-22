@@ -35,6 +35,7 @@ class TweetsController < ApplicationController
       tweet.image = req["public_id"]
     end
     tweet.update tweet_params
+    tweet.save
     redirect_to @current_user
   end
 

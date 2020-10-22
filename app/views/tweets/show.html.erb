@@ -1,14 +1,23 @@
-<h2>Tweet</h2>
-
-  <%= link_to 'Back', tweets_path %>
+<div class="space-between">
+  <h2 class="profile">Tweet</h2>
+  <div class="profile right-align">
+    <%= link_to 'Back', tweets_path %>
+  </div>
+</div>
 
 <ul>
-  <li>Tweet by: <%= link_to "#{@tweet.user.name}", user_path(@tweet.user.id) %> | <%= @tweet.created_at.strftime '%A, %B %e, %Y' %></li>
+  <li>Tweet by:
+    <% if @tweet.user.image.present? %>
+    <%= cl_image_tag(@tweet.user.image, :width=>32, :height=>32, :gravity=>"face", :radius=>"max", :crop=>"fill", :background=>"#f2f2f2") %>
+      <% else %>
+      <%= image_tag 'empty-profile-picture.png', :class => 'icon' %>
+    <% end %>
+
+    <%= link_to "#{@tweet.user.name}", user_path(@tweet.user.id) %> |
+    <%= @tweet.created_at.strftime '%A, %B %e, %Y' %></li>
   <li><%= @tweet.content %></li>
-  <li><%= cl_image_tag(@tweet.image), :class => 'thumb' %></li>
+  <li><%= cl_image_tag(@tweet.image, :height => 144) %></li>
 
     <%= render @tweet.comments %>
     <%= render 'comments/form' %>
-
-
 </ul>

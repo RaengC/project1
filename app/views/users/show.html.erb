@@ -1,19 +1,17 @@
-
 <div class="space-between">
   <h1>
     <div class="profile left-align">
       <% if @user.image.present? %>
-      <%= image_tag @user.image, :class => 'icon' %>
+      <%= cl_image_tag(@user.image, :width=>32, :height=>32, :gravity=>"face", :radius=>"max", :crop=>"fill", :background=>"#f2f2f2") %>
       <% else %>
         <%= image_tag 'empty-profile-picture.png', :class => 'icon' %>
         <% end %>
       <%= @user.name %>
     </div>
   </h1>
-    <div class="profile right-align align-centre">
+    <div class="profile right-align">
         <%= render 'follow_form' if @current_user.present?  %>
     </div>
-
 </div>
 
 <li><strong><%= @user.title %></strong></li>
@@ -28,8 +26,6 @@
     <%= link_to 'Back', tweets_path %>
   </div>
 </div>
-
-
 
 <section>
   <%= render 'tweets' %>
