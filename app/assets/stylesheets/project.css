@@ -1,11 +1,6 @@
-/* * {border: 1px solid green;} */
+* {border: 1px solid green;}
 
-body {
-  margin: 0;
-}
-h1 {
-  margin: 12px 0 12px;
-}
+
 
 /* Style the container */
 .container {
@@ -16,6 +11,17 @@ h1 {
   border-radius: 0 0 5px 5px;
   background-color: #f2f2f2;
   padding: 20px;
+}
+
+.home-page {
+  font-size: 16px;
+}
+body {
+  margin: 0;
+}
+
+h1 {
+  margin: 12px 0 12px;
 }
 
 .thumb {

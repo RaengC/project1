@@ -1,8 +1,9 @@
-<h1>Twitter Clone<h1>
-
+<h2>Twitter Clone<h2>
 <% if @current_user.present? %>
   <p>You are currently logged in as <%= @current_user.name %></p>
 
-<%= render 'tweets/tweets' %>
+  <div class="home-page">
+    <%= render 'tweets/tweets' %>
+  </div>
 
 <% end %>

@@ -1,12 +1,17 @@
 <div class="space-between">
   <h1>
     <div class="profile left-align">
-      <% if @user.image.present? %>
-      <%= cl_image_tag(@user.image, :width=>32, :height=>32, :gravity=>"face", :radius=>"max", :crop=>"fill", :background=>"#f2f2f2") %>
-      <% else %>
-        <%= image_tag 'empty-profile-picture.png', :class => 'icon' %>
-        <% end %>
-      <%= @user.name %>
+      <div class="profile">
+        <% if @user.image.present? %>
+        <%= cl_image_tag(@user.image, :width=>64, :height=>64, :gravity=>"face", :radius=>"max", :crop=>"fill", :background=>"#f2f2f2") %>
+        <% else %>
+          <%= image_tag 'empty-profile-picture.png', :class => 'icon' %>
+          <% end %>
+      </div>
+      <div class="profile right-align">
+        <%= @user.name %>
+      </div>
+
     </div>
   </h1>
     <div class="profile right-align">
