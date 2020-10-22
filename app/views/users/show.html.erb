@@ -1,18 +1,18 @@
 <div class="space-between">
     <div class="space-between">
-      <div class="profile">
+      <div class="row">
         <% if @user.image.present? %>
         <%= cl_image_tag(@user.image, :class => "profile-icon") %>
         <% else %>
           <%= image_tag 'empty-profile-picture.png', :class => 'icon' %>
           <% end %>
       </div>
-      <div class="profile right-align">
+      <div class="row right-align">
         <h1><%= @user.name %></h1>
       </div>
     </div>
 
-    <div class="profile right-align">
+    <div class="row right-align">
         <%= render 'follow_form' if @current_user.present?  %>
     </div>
 </div>
@@ -22,10 +22,10 @@
 
 <br>
 <div class="space-between">
-  <div class="profile">
+  <div class="row">
     <%= render 'stats' %>
   </div>
-  <div class="profile right-align">
+  <div class="row right-align">
     <%= link_to 'Back', tweets_path %>
   </div>
 </div>

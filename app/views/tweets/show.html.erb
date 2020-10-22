@@ -1,6 +1,6 @@
 <div class="space-between">
-  <h2 class="profile">Tweet</h2>
-  <div class="profile right-align">
+  <h2 class="row">Tweet</h2>
+  <div class="row right-align">
     <%= link_to 'Back', tweets_path %>
   </div>
 </div>
@@ -16,7 +16,9 @@
     <%= link_to "#{@tweet.user.name}", user_path(@tweet.user.id) %> |
     <%= @tweet.created_at.strftime '%A, %B %e, %Y' %></li>
   <li><%= @tweet.content %></li>
+  <% if @tweet.image.present? %>
   <li><%= cl_image_tag(@tweet.image, :height => 144) %></li>
+  <% end %>
 
     <%= render @tweet.comments %>
     <%= render 'comments/form' %>

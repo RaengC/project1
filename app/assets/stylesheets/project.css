@@ -11,6 +11,21 @@
   padding: 20px;
 }
 
+.row {
+  display: inline-block;
+  display: flex
+}
+
+.right-align {
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
 .home-page {
   font-size: 16px;
 }
@@ -51,20 +66,6 @@ li {
 }
 
 
-.profile {
-  display: inline-block;
-  display: flex
-}
-
-.right-align {
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.space-between {
-  display: flex;
-  justify-content: space-between;
-}
 
 
 /************ FORM Styling *****************/
