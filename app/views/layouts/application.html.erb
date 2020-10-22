@@ -22,6 +22,7 @@
           <%= link_to 'Sign Up', new_user_path %>
           <%= link_to "Login", login_path %>
       <% end %>
+
       <div class="dropdown">
         <% if @current_user.present? %>
         <button class="dropbtn"><%= @current_user.name %>
@@ -34,7 +35,6 @@
           <% end %>
           <div class="dropdown-content">
             <% if @current_user.present? %>
-
               <%= link_to "Update Profile", edit_user_path(@current_user) %>
               <%= link_to "Logout #{ @current_user[:name]}", login_path, :method => 'delete' %>
               <% else %>

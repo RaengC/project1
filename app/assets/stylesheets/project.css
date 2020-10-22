@@ -1,6 +1,4 @@
-* {border: 1px solid green;}
-
-
+/* * {border: 1px solid green;} */
 
 /* Style the container */
 .container {
@@ -31,15 +29,14 @@ h1 {
 ul {
   list-style-type: none;
   padding: 10px 40px 10px 20px;
-  border: 2px solid black;
+  /* border: 2px solid black; */
+  box-shadow: 2px 0 5px black;
+  border-radius: 4px;
+  margin: 7px 0;
 }
 
 li {
     list-style-type: none;
-}
-
-.form-group {
-
 }
 
 .icon {
@@ -62,10 +59,7 @@ li {
   justify-content: space-between;
 }
 
-/* .align-centre {
-  align-items: center;
-} */
-
+/************ FORM Styling *****************/
 /* Style inputs, select elements and textareas */
 input[type=text], input[type=password], input[type=email], input[class=form-control], select, textarea {
   width: 100%;
@@ -78,7 +72,7 @@ input[type=text], input[type=password], input[type=email], input[class=form-cont
 
 /* Style the label to display next to the inputs */
 label {
-  padding: 12px 12px 12px 0;
+  padding: 6px 12px 6px 0;
   display: inline-block;
 }
 
@@ -86,7 +80,7 @@ label {
 input[type=submit] {
   background-color: #a03c3c;
   color: white;
-  padding: 12px 20px;
+  padding: 10px 20px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -168,4 +162,22 @@ input[type=submit] {
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+/******* COMMEMTS Dropdown ********/
+.comments-btn {
+  font-size: 14px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 10px 16px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+  background-color: #a03c3c;
+  border-radius: 4px;
+}
+
+.tweet-comments {
+  padding-left: 10px;
 }

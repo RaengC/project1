@@ -14,20 +14,29 @@
   <li><% if tweet.image.present? %>
         <%= cl_image_tag(tweet.image, :height=>144) %>
       <% end %>
-  <% tweet.comments.each do |comment| %>
-  <p>
-    <strong><%= comment.user.name %></strong>: <%= comment.body %>
-  </p>
 
-  <% end %>
+      <div class="dropdown">
+        <button class="comments-btn">Comments ▼
+          <i class="fa fa-caret-down"></i>
+        </button>
+          <div class="dropdown-content tweet-comments">
+            <% tweet.comments.each do |comment| %>
+            <p>
+              <%= comment.created_at.strftime '%l:%M%P, %e %b %Y' %>
+              <strong><%= comment.user.name %></strong> :
+              <%= comment.body %>
+            </p>
+            <% end %>
+          </div>
+      </div>
 
   <%= form_with(model: [ tweet, tweet.comments.build], local: true) do |f| %>
     <p>
-      <%= f.label :Comment %><br>
-      <%= f.text_area :body %>
+      <%= f.text_area :body, placeholder: 'Comment'%>
+      <%= f.submit %>
     </p>
     <p>
-      <%= f.submit %>
+
     </p>
   <% end %>
 

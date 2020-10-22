@@ -1,9 +1,11 @@
 <h2>Twitter Clone<h2>
+
 <% if @current_user.present? %>
   <p>You are currently logged in as <%= @current_user.name %></p>
-
   <div class="home-page">
     <%= render 'tweets/tweets' %>
   </div>
+  <% else %>
+  <h3>To access this app <%= link_to 'login', login_path %> or <%= link_to 'create an account', new_user_path %>.</h3>
 
 <% end %>
