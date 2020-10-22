@@ -10,15 +10,16 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new user_params
-    if params[:file].present?
-      req = Cloudinary::Uploader.upload(params[:file])
-      user.image = req["public_id"]
-      user.save
+
       if @user.save
       session[:user_id] = @user.id
       redirect_to root_path
         else
           render :new
+          if params[:file].present?
+            req = Cloudinary::Uploader.upload(params[:file])
+            user.image = req["public_id"]
+            user.save
         end
       end
   end
