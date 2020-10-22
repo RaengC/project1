@@ -25,7 +25,7 @@ c10 = Comment.create(:user_id => u5.id, :body => 'Thank you Alfred, I have no id
 c11 = Comment.create(:user_id => u6.id, :body => 'That about sums it up really')
 c12 = Comment.create(:user_id => u8.id, :body => "It's pretty much every action film I've ever been in. You are my hero Riply!")
 c13 = Comment.create(:user_id => u8.id, :body => "You know its all about getting the young people in there. Move over superman, Hit-Girl is up! ")
-c14 = Comment.create(:user_id => u5.id, :body => "Superman is NOT a hero, didnt you see me smash him in Batman vs Superman! ")
+c14 = Comment.create(:user_id => u5.id, :body => "Superman is NOT a hero, did you not you see me destroy him in Batman vs Superman! ")
 c15 = Comment.create(:user_id => u6.id, :body => "Put a sock in it you rich playboy")
 c16 = Comment.create(:user_id => u7.id, :body => "Grrrrrrrrrrrrrrrrrrrrrrrrrrrr")
 puts "#{ Comment.count} comments created"
