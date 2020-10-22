@@ -1,9 +1,9 @@
 User.destroy_all
-u1 = User.create(:name => 'Sam', :email => 'sam@ga.co', :password => 'chicken')
+u1 = User.create(:name => 'Sam', :email => 'sam@ga.co', :password => 'chicken', :bio => 'I really like cats and flowers. And my mum, I love my mum!', :title => 'All round lovely human. ')
 u2 = User.create(:name => 'Teddy', :email => 'teddy@ga.co', :password => 'chicken', :bio => 'I love exploring the local neighbourhood, it is such a beautiful time to be a teddy!', :title => 'Best friend to all')
 u3 = User.create(:name => 'Teacher', :email => 'teacher@ga.co', :password => 'chicken', :bio => 'Do I really have to do this?', :title => 'Best teacher ever. Obviously. ')
-u4 = User.create(:name => 'Tony', :email => 'tony@ga.co', :password => 'chicken')
-u5 = User.create(:name => 'Bruce', :email => 'batman@ga.co', :password => 'chicken')
+u4 = User.create(:name => 'Tony', :email => 'tony@ga.co', :password => 'chicken', :bio => "Tony StarkIron Man. Genius. Billionaire. Philanthropist. Tony Stark's confidence is only matched by his high-flying abilities as the hero called Iron Man." , :title => 'Genius, billionaire, playboy, philanthropist.')
+u5 = User.create(:name => 'Bruce', :email => 'batman@ga.co', :password => 'chicken', :bio => 'If you kill a killer the number of killers in the world remains the same', :title => 'Gotham Cities most outragous billionaire')
 u6 = User.create(:name => 'Riply', :email => 'riply@ga.co', :password => 'chicken', :bio => 'I was born on October 8th, 2092 at the Olympia colony on Luna. I had one daughter, Amanda Ripley-McClaren. Sometime prior to 2122, I was hired as a Warrant Officer for the Weyland-Yutani commercial hauler USCSS Nostromo.', :title => 'Best Action Hero Ever', :image => 'https://res.cloudinary.com/drcllkgsn/image/upload/v1603340716/vqmsnmkmtah9vjmqrze6.jpg')
 u7 = User.create(:name => 'Alien', :email => 'alien@ga.co', :password => 'chicken')
 u8 = User.create(:name => 'Hit-Girl', :email => 'hit_girl@ga.co', :password => 'chicken', :bio => 'I wish I could kill aliens!!!!', :title => 'Best Side Kick Ever!', :image => 'https://res.cloudinary.com/drcllkgsn/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1603344828/kgdtefheglemdg3nmoay.jpg')
@@ -24,7 +24,10 @@ c9 = Comment.create(:user_id => u3.id, :body => 'Well you could be offering mone
 c10 = Comment.create(:user_id => u5.id, :body => 'Thank you Alfred, I have no idea how I would have survived without you')
 c11 = Comment.create(:user_id => u6.id, :body => 'That about sums it up really')
 c12 = Comment.create(:user_id => u8.id, :body => "It's pretty much every action film I've ever been in. You are my hero Riply!")
-
+c13 = Comment.create(:user_id => u8.id, :body => "You know its all about getting the young people in there. Move over superman, Hit-Girl is up! ")
+c14 = Comment.create(:user_id => u5.id, :body => "Superman is NOT a hero, didnt you see me smash him in Batman vs Superman! ")
+c15 = Comment.create(:user_id => u6.id, :body => "Put a sock in it you rich playboy")
+c16 = Comment.create(:user_id => u7.id, :body => "Grrrrrrrrrrrrrrrrrrrrrrrrrrrr")
 puts "#{ Comment.count} comments created"
 
 Tweet.destroy_all
@@ -71,6 +74,7 @@ t5.comments << c7 << c8
 t8.comments << c9
 t12.comments << c10
 t19.comments << c11 << c12
+t20.comments << c13 << c14 << c15 << c16
 
 # Relationships
 puts "Followers"
