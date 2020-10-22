@@ -1,9 +1,15 @@
 <p>
+  <% if comment.user.image.present? %>
+  <%= cl_image_tag(comment.user.image, :class => 'icon') %>
+    <% else %>
+    <%= image_tag 'empty-profile-picture.png', :class => 'icon' %>
+  <% end %>
   <strong><%= comment.user.name %>:</strong> <%= comment.body %>
 </p>
+
 <p>
   <% if @tweet.user.id == @current_user.id || comment.user_id == @current_user.id %>
-    <%= link_to 'Delete Comment', [comment.tweet, comment],
+    <%= link_to "#{@current_user.name} Delete Comment?", [comment.tweet, comment],
                  method: :delete,
                  data: { confirm: 'Are you sure?' } %>
   <% end  %>

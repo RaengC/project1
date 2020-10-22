@@ -28,14 +28,13 @@
         <% if @current_user.present? %>
         <button class="dropbtn">
           <div class="row">
-            <div class="row right-align">
+            <div class="row right-align icon-position">
               <%= cl_image_tag(@current_user.image, :class => 'icon') %>
             </div>
             <div class="row right-align">
               <%= @current_user.name %>
             </div>
           </div>
-          <i class="fa fa-caret-down"></i>
         </button>
           <% end %>
           <div class="dropdown-content">

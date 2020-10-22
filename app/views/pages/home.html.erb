@@ -1,12 +1,20 @@
-<h1>Social Networking<h1>
+
 
 <% if @current_user.present? %>
-  <p>You are currently logged in as <%= @current_user.name %></p>
-  <div class="home-page">
-    <%= render 'tweets/tweets' %>
-  </div>
+<div>
+  <h2>Your social networking platform</h2>
+    <main>
+      <h4>I know you are checking my url/paths are locked!</h4>
+      <%= image_tag 'socialmedia', :class => 'home-image' %>
+    </main>
+    <aside>
+      <h4>Lovely to see you here <%= @current_user.name %></h4>
+    </aside>
+</div>
+
   <% else %>
   <div>
+    <h1>Social Networking<h1>
     <main>
       <p>This is a free social networking platform allowing registered members to post pictures and text throughout the day.
       <p>As a member you can post content as well as comment on other members posts.</p>

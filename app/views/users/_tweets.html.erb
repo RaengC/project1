@@ -1,5 +1,5 @@
 <% @user.tweets.each do |tweet|  %>
-  <ul>
+  <ul class="tweet-container">
     <li><strong>Post by:
       <% if tweet.user.image.present? %>
       <%= cl_image_tag(tweet.user.image, :class => 'icon') %>

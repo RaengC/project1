@@ -5,20 +5,20 @@
   </div>
 </div>
 
-<ul>
+<ul class="tweet-container">
   <li><strong>Post by:</strong>
     <% if @tweet.user.image.present? %>
-    <%= cl_image_tag(@tweet.user.image, :width=>32, :height=>32, :gravity=>"face", :radius=>"max", :crop=>"fill", :background=>"#f2f2f2") %>
-      <% else %>
-      <%= image_tag 'empty-profile-picture.png', :class => 'icon' %>
+      <%= cl_image_tag(@tweet.user.image, :width=>32, :height=>32, :gravity=>"face", :radius=>"max", :crop=>"fill", :background=>"#f2f2f2") %>
+        <% else %>
+          <%= image_tag 'empty-profile-picture.png', :class => 'icon' %>
     <% end %>
 
     <strong><%= link_to "#{@tweet.user.name}", user_path(@tweet.user.id) %></strong> |
     <%= @tweet.created_at.strftime '%e %b %Y' %></li>
-  <li><%= @tweet.content %></li>
-  <% if @tweet.image.present? %>
-  <li><%= cl_image_tag(@tweet.image, :height => 144) %></li>
-  <% end %>
+    <li><%= @tweet.content %></li>
+        <% if @tweet.image.present? %>
+          <li><%= cl_image_tag(@tweet.image, :height => 144) %></li>
+        <% end %>
 
     <%= render @tweet.comments %>
     <%= render 'comments/form' %>
