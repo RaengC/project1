@@ -7,7 +7,7 @@
   max-width: 960px;
   margin: 0 auto;
   border-radius: 0 0 5px 5px;
-  background-color: #f2f2f2;
+  /* background-color: #f2f2f2; */
   padding: 20px;
 }
 
@@ -30,9 +30,10 @@ ul {
   list-style-type: none;
   padding: 10px 40px 10px 20px;
   /* border: 2px solid black; */
-  box-shadow: 2px 0 5px black;
+  box-shadow: 2px 0 3px black;
   border-radius: 4px;
   margin: 7px 0;
+  background-color: #f2f2f2;
 }
 
 li {
@@ -99,9 +100,11 @@ input[type=submit] {
 /* Navbar container */
 .navbar {
   display: flex;
+  justify-content: space-evenly;
   overflow: hidden;
   background-color: #a03c3c;
   font-family: Arial;
+  box-shadow: 2px 0 5px black;
 }
 
 /* Links inside the navbar */
@@ -170,10 +173,10 @@ input[type=submit] {
   border: none;
   outline: none;
   color: white;
-  padding: 10px 16px;
+  padding: 6px 35px;
   background-color: inherit;
   font-family: inherit; /* Important for vertical align on mobile phones */
-  margin: 0; /* Important for vertical align on mobile phones */
+  margin: 10px 0 0 0; /* Important for vertical align on mobile phones */
   background-color: #a03c3c;
   border-radius: 4px;
 }

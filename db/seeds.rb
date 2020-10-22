@@ -1,13 +1,13 @@
 User.destroy_all
 u1 = User.create(:name => 'Sam', :email => 'sam@ga.co', :password => 'chicken')
-u2 = User.create(:name => 'Teddy', :email => 'teddy@ga.co', :password => 'chicken')
-u3 = User.create(:name => 'Teacher', :email => 'teacher@ga.co', :password => 'chicken')
+u2 = User.create(:name => 'Teddy', :email => 'teddy@ga.co', :password => 'chicken', :bio => 'I love exploring the local neighbourhood, it is such a beautiful time to be a teddy!', :title => 'Best friend to all')
+u3 = User.create(:name => 'Teacher', :email => 'teacher@ga.co', :password => 'chicken', :bio => 'Do I really have to do this?', :title => 'Best teacher ever. Obviously. ')
 u4 = User.create(:name => 'Tony', :email => 'tony@ga.co', :password => 'chicken')
 u5 = User.create(:name => 'Bruce', :email => 'batman@ga.co', :password => 'chicken')
-u6 = User.create(:name => 'Riply', :email => 'riply@ga.co', :password => 'chicken', :bio => 'I was born on October 8th, 2092 at the Olympia colony on Luna. I had one daughter, Amanda Ripley-McClaren. Sometime prior to 2122, I was hired as a Warrant Officer for the Weyland-Yutani commercial hauler USCSS Nostromo.', :title => 'Best Action Hero Ever', :image => 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQGPvRytlowGjEFpizZXxSHx2BO9zbvPxLxeA&usqp=CAU')
+u6 = User.create(:name => 'Riply', :email => 'riply@ga.co', :password => 'chicken', :bio => 'I was born on October 8th, 2092 at the Olympia colony on Luna. I had one daughter, Amanda Ripley-McClaren. Sometime prior to 2122, I was hired as a Warrant Officer for the Weyland-Yutani commercial hauler USCSS Nostromo.', :title => 'Best Action Hero Ever', :image => 'https://res.cloudinary.com/drcllkgsn/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1603340716/vqmsnmkmtah9vjmqrze6.jpg')
 u7 = User.create(:name => 'Alien', :email => 'alien@ga.co', :password => 'chicken')
-u8 = User.create(:name => 'Hit-Girl', :email => 'hit_girl@ga.co', :password => 'chicken')
-u9 = User.create(:name => 'Jenny', :email => 'film@ga.co', :password => 'chicken', :bio => "No fuss, no mess film reviews from someone who knows what's going on!", :title => 'Film Buff', :image => 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQPHAmm2n0Bm_TDkULWsofu4bZ8rQuz0h-IQQ&usqp=CAU')
+u8 = User.create(:name => 'Hit-Girl', :email => 'hit_girl@ga.co', :password => 'chicken', :bio => 'I wish I could kill aliens!!!!', :title => 'Best Side Kick Ever!', :image => 'https://res.cloudinary.com/drcllkgsn/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1603344828/kgdtefheglemdg3nmoay.jpg')
+u9 = User.create(:name => 'Jenny', :email => 'film@ga.co', :password => 'chicken', :bio => "No fuss, no mess film reviews from someone who knows what's going on!", :title => 'Film Buff', :image => 'https://res.cloudinary.com/drcllkgsn/image/upload/v1603340826/aas0t3xl1zesxlazqxue.jpg')
 
 puts "#{ User.count} users created"
 

@@ -6,14 +6,14 @@
       <% else %>
       <%= image_tag 'empty-profile-picture.png', :class => 'icon' %>
       <% end %>
-    <%= link_to "#{tweet.user.name}", user_path(tweet.user.id)  %> |
+    <%= link_to "#{tweet.user.name}", user_path(tweet.user.id)  %></strong> |
     <%= tweet.created_at.strftime '%A, %B %e, %Y' %>
-      </strong></li>
+      </li>
 
   <li><%= link_to "#{tweet.content}", tweet_path(tweet.id) %></li>
   <li><% if tweet.image.present? %>
         <%= cl_image_tag(tweet.image, :height=>144) %>
-      <% end %>
+      <% end %></li>
 
       <div class="dropdown">
         <button class="comments-btn">Comments ▼
@@ -28,15 +28,12 @@
             </p>
             <% end %>
           </div>
-      </div>
+        </div>
 
   <%= form_with(model: [ tweet, tweet.comments.build], local: true) do |f| %>
     <p>
       <%= f.text_area :body, placeholder: 'Comment'%>
       <%= f.submit %>
-    </p>
-    <p>
-
     </p>
   <% end %>
 

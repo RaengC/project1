@@ -2,7 +2,7 @@
     <div class="space-between">
       <div class="profile">
         <% if @user.image.present? %>
-        <%= cl_image_tag(@user.image, :width=>64, :height=>64, :gravity=>"face", :radius=>"max", :crop=>"fill", :background=>"#f2f2f2") %>
+        <%= cl_image_tag(@user.image, :width=>64, :height=>64, :gravity=>"face", :radius=>"max", :crop=>"fill", :background=>"white") %>
         <% else %>
           <%= image_tag 'empty-profile-picture.png', :class => 'icon' %>
           <% end %>
