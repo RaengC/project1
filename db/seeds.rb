@@ -12,6 +12,21 @@ u9 = User.create(:name => 'Jenny', :email => 'film@ga.co', :password => 'chicken
 puts "#{ User.count} users created"
 
 Comment.destroy_all
+c1 = Comment.create(:user_id => u6.id, :body => 'I will destoy you! ')
+c2 = Comment.create(:user_id => u6.id, :body => 'Robin has nothing on you. If you ever need a job just look me up')
+c3 = Comment.create(:user_id => u7.id, :body => 'GRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR')
+c4 = Comment.create(:user_id => u8.id, :body => 'So, you wanna play?')
+c5 = Comment.create(:user_id => u9.id, :body => 'Riply I so got your back!')
+c6 = Comment.create(:user_id => u5.id, :body => 'We do seem to have a lot in common and Robin seems to have disappeared... If your ever looking for work let Alfred know and we can arrange a meeting. ')
+c7 = Comment.create(:user_id => u1.id, :body => 'I feel you are taking yourself a tad to literally teddy. If you need any assistance please do reach out, I am always ready to give you a bunch of flowers from my garden :) ')
+c8 = Comment.create(:user_id => u5.id, :body => 'This reminds me of my parents horrible death.')
+c9 = Comment.create(:user_id => u3.id, :body => 'Well you could be offering money to the arts, but what would I know! ')
+c10 = Comment.create(:user_id => u5.id, :body => 'Thank you Alfred, I have no idea how I would have survived without you')
+c11 = Comment.create(:user_id => u6.id, :body => 'That about sums it up really')
+c12 = Comment.create(:user_id => u8.id, :body => "It's pretty much every action film I've ever been in. You are my hero Riply!")
+
+puts "#{ Comment.count} comments created"
+
 Tweet.destroy_all
 t1 = Tweet.create(:content => 'I bought these ones for my mother, what do you think?', :image => 'https://images.unsplash.com/photo-1550237330-a5d774594098?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')
 t2 = Tweet.create(:content => "A quick and simple service for getting pictures of kittens for use as placeholders in your designs or code. Just put your image size (width & height) after our URL and you'll get a placeholder.", :image => 'http://placekitten.com/200/300')
@@ -47,6 +62,15 @@ u6.tweets << t13 << t14 << t15
 u7.tweets << t16
 u8.tweets << t17 << t18
 u9.tweets << t19 << t20
+
+puts "Comments and tweets"
+t16.comments << c1 << c3 << c4
+t13.comments << c5
+t18.comments << c6
+t5.comments << c7 << c8
+t8.comments << c9
+t12.comments << c10
+t19.comments << c11 << c12
 
 # Relationships
 puts "Followers"
