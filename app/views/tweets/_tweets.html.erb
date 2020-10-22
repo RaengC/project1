@@ -1,13 +1,13 @@
 <% @tweets.each do |tweet|  %>
 <ul>
-  <li><strong>Tweet by:
+  <li><strong>Post by:
     <% if tweet.user.image.present? %>
     <%= cl_image_tag(tweet.user.image, :class => 'icon') %>
       <% else %>
       <%= image_tag 'empty-profile-picture.png', :class => 'icon' %>
       <% end %>
     <%= link_to "#{tweet.user.name}", user_path(tweet.user.id)  %></strong> |
-    <%= tweet.created_at.strftime '%A, %B %e, %Y' %>
+    <%= tweet.created_at.strftime '%e %b %Y' %>
       </li>
 
   <li><%= link_to "#{tweet.content}", tweet_path(tweet.id) %></li>
@@ -16,9 +16,9 @@
       <% end %></li>
 
       <div class="dropdown">
-        <button class="comments-btn">Comments ▼
+        <div class="comments-btn">Read Post Comments ▼
           <i class="fa fa-caret-down"></i>
-        </button>
+        </div>
           <div class="dropdown-content tweet-comments">
             <% tweet.comments.each do |comment| %>
             <p>
@@ -32,7 +32,7 @@
 
     <%= form_with(model: [ tweet, tweet.comments.build], local: true) do |f| %>
       <p>
-        <%= f.text_area :body, placeholder: 'Comment'%>
+        <%= f.text_area :body, placeholder: 'Add your comment here!'%>
         <%= f.submit %>
       </p>
       <% end %>

@@ -1,6 +1,6 @@
 <% @user.tweets.each do |tweet|  %>
   <ul>
-    <li><strong>Tweet by:
+    <li><strong>Post by:
       <% if tweet.user.image.present? %>
       <%= cl_image_tag(tweet.user.image, :class => 'icon') %>
         <% else %>

@@ -29,6 +29,25 @@
 .home-page {
   font-size: 16px;
 }
+
+main {
+  display: inline-block;
+  width: 70%;
+  padding-right: 15px;
+  font-size: 18px;
+}
+
+aside {
+  display: inline-block;
+  width: 20%;
+  vertical-align: top;
+  background-color: #f2f2f2;;
+  padding: 1em;
+  box-shadow: 4px 0 15px black; /* now it pops */
+  border-radius: 0.5em; /* rounds the corners */
+  text-align: center;
+}
+
 body {
   margin: 0;
 }
@@ -64,9 +83,6 @@ li {
   height: 64px;
   border-radius: 35px;
 }
-
-
-
 
 /************ FORM Styling *****************/
 /* Style inputs, select elements and textareas */
@@ -183,13 +199,17 @@ input[type=submit] {
   font-size: 14px;
   border: none;
   outline: none;
-  color: white;
+  color: black;
   padding: 6px 35px;
   background-color: inherit;
   font-family: inherit; /* Important for vertical align on mobile phones */
   margin: 10px 0 0 0; /* Important for vertical align on mobile phones */
-  background-color: #a03c3c;
-  border-radius: 4px;
+  /* background-color: #a03c3c; */
+  /* border-radius: 4px; */
+}
+
+.comments-btn:hover {
+  background-color: #de7878;
 }
 
 .tweet-comments {

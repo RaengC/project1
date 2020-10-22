@@ -1,20 +1,20 @@
 <div class="space-between">
-  <h2 class="row">Tweet</h2>
+  <h2 class="row">Post</h2>
   <div class="row right-align">
     <%= link_to 'Back', tweets_path %>
   </div>
 </div>
 
 <ul>
-  <li>Tweet by:
+  <li><strong>Post by:</strong>
     <% if @tweet.user.image.present? %>
     <%= cl_image_tag(@tweet.user.image, :width=>32, :height=>32, :gravity=>"face", :radius=>"max", :crop=>"fill", :background=>"#f2f2f2") %>
       <% else %>
       <%= image_tag 'empty-profile-picture.png', :class => 'icon' %>
     <% end %>
 
-    <%= link_to "#{@tweet.user.name}", user_path(@tweet.user.id) %> |
-    <%= @tweet.created_at.strftime '%A, %B %e, %Y' %></li>
+    <strong><%= link_to "#{@tweet.user.name}", user_path(@tweet.user.id) %></strong> |
+    <%= @tweet.created_at.strftime '%e %b %Y' %></li>
   <li><%= @tweet.content %></li>
   <% if @tweet.image.present? %>
   <li><%= cl_image_tag(@tweet.image, :height => 144) %></li>
