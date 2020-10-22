@@ -66,6 +66,7 @@ li {
   justify-content: space-between;
 }
 
+
 /************ FORM Styling *****************/
 /* Style inputs, select elements and textareas */
 input[type=text], input[type=password], input[type=email], input[class=form-control], select, textarea {
@@ -120,6 +121,8 @@ input[type=submit] {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  align-items: center;
+  display: flex;
 }
 
 /* The dropdown container */
@@ -174,6 +177,7 @@ input[type=submit] {
 }
 
 /******* COMMEMTS Dropdown ********/
+
 .comments-btn {
   font-size: 14px;
   border: none;

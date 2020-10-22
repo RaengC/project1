@@ -30,12 +30,12 @@
           </div>
         </div>
 
-  <%= form_with(model: [ tweet, tweet.comments.build], local: true) do |f| %>
-    <p>
-      <%= f.text_area :body, placeholder: 'Comment'%>
-      <%= f.submit %>
-    </p>
-  <% end %>
+    <%= form_with(model: [ tweet, tweet.comments.build], local: true) do |f| %>
+      <p>
+        <%= f.text_area :body, placeholder: 'Comment'%>
+        <%= f.submit %>
+      </p>
+      <% end %>
 
-</ul>
+    </ul>
 <% end %>
