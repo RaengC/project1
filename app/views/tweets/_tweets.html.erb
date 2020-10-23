@@ -1,50 +1,51 @@
 <% @tweets.each do |tweet|  %>
-<ul class="tweet-container">
-  <li><strong>Post by:
-    <% if tweet.user.image.present? %>
-    <%= cl_image_tag(tweet.user.image, :class => 'icon') %>
+  <ul class="tweet-container">
+    <li><strong>Post by:
+      <% if tweet.user.image.present? %>
+        <%= cl_image_tag(tweet.user.image, :class => 'icon') %>
       <% else %>
-      <%= image_tag 'empty-profile-picture.png', :class => 'icon' %>
+        <%= image_tag 'empty-profile-picture.png', :class => 'icon' %>
       <% end %>
-    <%= link_to "#{tweet.user.name}", user_path(tweet.user.id)  %></strong> |
-    <%= tweet.created_at.strftime '%e %b %Y' %>
-      </li>
+      <%= link_to "#{tweet.user.name}", user_path(tweet.user.id)  %></strong> |
+      <%= tweet.created_at.strftime '%e %b %Y' %>
+    </li>
 
-  <li><%= link_to "#{tweet.content}", tweet_path(tweet.id) %></li>
-  <li><% if tweet.image.present? %>
-        <%= cl_image_tag(tweet.image, :height=>144) %>
-      <% end %></li>
+    <li><%= link_to "#{tweet.content}", tweet_path(tweet.id) %></li>
+    <li><% if tweet.image.present? %>
+          <%= cl_image_tag(tweet.image, :height=>144) %>
+        <% end %></li>
 
-  <% if tweet.comments.present? %>
+    <% if tweet.comments.present? %>
       <div class="dropdown">
         <div class="comments-btn">Read Post Comments ▼
           <i class="fa fa-caret-down"></i>
         </div>
-          <div class="dropdown-content tweet-comments">
-            <% tweet.comments.each do |comment| %>
-              <div>
-                <% if comment.user.image.present? %>
-                <%= cl_image_tag(comment.user.image, :class => 'icon') %>
-                  <% else %>
-                  <%= image_tag 'empty-profile-picture.png', :class => 'icon' %>
-                <% end %>
-                <%= comment.created_at.strftime '%l:%M%P, %e %b' %>
-                <strong><%= comment.user.name %></strong> :
-              </div>
+        <div class="dropdown-content tweet-comments">
+          <% tweet.comments.each do |comment| %>
             <div>
-              <p><%= comment.body %></p>
+              <% if comment.user.image.present? %>
+                <%= cl_image_tag(comment.user.image, :class => 'icon') %>
+              <% else %>
+                <%= image_tag 'empty-profile-picture.png', :class => 'icon' %>
               <% end %>
+              <%= comment.created_at.strftime '%l:%M%P, %e %b' %>
+              <strong><%= comment.user.name %></strong> : <%= comment.body %>
             </div>
+          <% end %>
+        <%= form_with(model: [ tweet, tweet.comments.build], local: true) do |f| %>
+          <p>
+            <%= f.text_area :body, placeholder: 'Add your comment here!'%>
+            <%= f.submit %>
+          </p>
+        <% end %>
           </div>
-        </div>
-    <% end %>
-
-    <%= form_with(model: [ tweet, tweet.comments.build], local: true) do |f| %>
-      <p>
-        <%= f.text_area :body, placeholder: 'Add your comment here!'%>
-        <%= f.submit %>
-      </p>
-      <% end %>
-
-    </ul>
+        <% else %>
+          <%= form_with(model: [ tweet, tweet.comments.build], local: true) do |f| %>
+            <p>
+              <%= f.text_area :body, placeholder: 'Add your comment here!'%>
+              <%= f.submit %>
+            </p>
+          <% end %>
+        <% end %>
+      </ul>
 <% end %>

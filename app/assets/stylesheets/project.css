@@ -82,12 +82,12 @@ li {
 
 .icon {
   height: 2em;
-  border-radius: 35px;
+  border-radius: 50%;
 }
 
 .profile-icon {
   height: 64px;
-  border-radius: 35px;
+  border-radius: 50%;
 }
 
 /************ FORM Styling *****************/
