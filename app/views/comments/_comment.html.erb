@@ -1,7 +1,7 @@
 <p>
   <% if comment.user.image.present? %>
-  <%= cl_image_tag(comment.user.image, :class => 'icon') %>
-    <% else %>
+    <%= cl_image_tag(comment.user.image, :class => 'icon') %>
+  <% else %>
     <%= image_tag 'empty-profile-picture.png', :class => 'icon' %>
   <% end %>
   <strong><%= comment.user.name %>:</strong> <%= comment.body %>
