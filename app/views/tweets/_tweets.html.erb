@@ -34,8 +34,13 @@
 
               <%= comment.created_at.strftime '%l:%M%P, %e %b' %> |
               <strong><%= comment.user.name %></strong> |
-
               <%= comment.body %>
+</p><p class="delete-comment"> 
+              <% if comment.user_id == @current_user.id %>
+                <%= link_to "#{@current_user.name} Delete Comment?", [comment.tweet, comment],
+                             method: :delete,
+                             data: { confirm: 'Are you sure?' } %>
+              <% end  %>
             </p>
 
           <% end %>

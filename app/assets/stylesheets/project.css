@@ -91,9 +91,18 @@ li {
   border-radius: 50%;
 }
 
+.user-title {
+  margin: 10px 0 0 0;
+}
+
 .link-style, .link-style a {
   text-decoration: none;
   color: #5a2121;
+}
+
+.delete-comment {
+  font-style: italic;
+  text-decoration: underline;
 }
 /************ FORM Styling *****************/
 /* Style inputs, select elements and textareas */

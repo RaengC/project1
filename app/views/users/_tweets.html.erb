@@ -10,7 +10,7 @@
       <%= tweet.created_at.strftime '%A, %B %e, %Y' %>
     </li>
 
-    <li><%= tweet.content %></li>
+    <p class="link-style"><%= tweet.content %></p>
 
     <li><% if tweet.image.present? %>
           <%= cl_image_tag(tweet.image, :height=>144) %>

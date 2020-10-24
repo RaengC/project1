@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
     @tweet = Tweet.find(params[:tweet_id])
     @comment = @tweet.comments.find(params[:id])
     @comment.destroy
-    redirect_to tweet_path(@tweet)
+    redirect_to tweets_path(@tweet)
   end
 
   private
