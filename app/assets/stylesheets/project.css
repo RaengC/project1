@@ -86,6 +86,10 @@ li {
   border-radius: 50%;
 }
 
+.tweet-image {
+  max-width: 100%;
+}
+
 .profile-icon {
   height: 64px;
   border-radius: 50%;

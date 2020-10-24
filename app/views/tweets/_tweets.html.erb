@@ -13,7 +13,7 @@
 
     <p class="link-style"><%= link_to "#{tweet.content}", tweet_path(tweet.id) %></p>
     <li><% if tweet.image.present? %>
-          <%= cl_image_tag(tweet.image, :height=>144) %>
+          <%= cl_image_tag(tweet.image, :class => 'tweet-image') %>
         <% end %></li>
 
 <%# Display if there are comments for the tweet, if so place comment box within the drop down at the end %>
@@ -35,7 +35,7 @@
               <%= comment.created_at.strftime '%l:%M%P, %e %b' %> |
               <strong><%= comment.user.name %></strong> |
               <%= comment.body %>
-</p><p class="delete-comment"> 
+</p><p class="delete-comment">
               <% if comment.user_id == @current_user.id %>
                 <%= link_to "#{@current_user.name} Delete Comment?", [comment.tweet, comment],
                              method: :delete,
