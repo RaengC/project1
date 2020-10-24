@@ -78,7 +78,7 @@ h1 {
 }
 
 li {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 .icon {
@@ -91,6 +91,10 @@ li {
   border-radius: 50%;
 }
 
+.link-style, .link-style a {
+  text-decoration: none;
+  color: #5a2121;
+}
 /************ FORM Styling *****************/
 /* Style inputs, select elements and textareas */
 input[type=text], input[type=password], input[type=email], input[class=form-control], select, textarea {
@@ -162,7 +166,7 @@ input[type=submit] {
   color: white;
   padding: 14px 16px;
   background-color: inherit;
-  font-family: inherit; 
+  font-family: inherit;
   margin: 0;
 }
 
@@ -207,10 +211,10 @@ input[type=submit] {
   border: none;
   outline: none;
   color: black;
-  padding: 6px 35px;
+  padding: 6px 2px 9px 0;
   background-color: inherit;
   font-family: inherit;
-  margin: 10px 0 0 0;
+  /* margin: 10px 0 0 0; */
 }
 
 .comments-btn:hover {
@@ -218,5 +222,6 @@ input[type=submit] {
 }
 
 .tweet-comments {
-  padding-left: 10px;
+  padding: 0 10px 10px 10px;
+  border-radius: 0 0 4px 4px;
 }

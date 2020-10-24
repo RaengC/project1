@@ -15,7 +15,7 @@
 
     <strong><%= link_to "#{@tweet.user.name}", user_path(@tweet.user.id) %></strong> |
     <%= @tweet.created_at.strftime '%e %b %Y' %></li>
-    <li><%= @tweet.content %></li>
+    <p class="link-style"><%= @tweet.content %></p>
         <% if @tweet.image.present? %>
           <li><%= cl_image_tag(@tweet.image, :height => 144) %></li>
         <% end %>
