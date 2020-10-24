@@ -6,6 +6,7 @@
       <% else %>
         <%= image_tag 'empty-profile-picture.png', :class => 'icon' %>
       <% end %>
+
       <%= link_to "#{tweet.user.name}", user_path(tweet.user.id)  %></strong> |
       <%= tweet.created_at.strftime '%e %b %Y' %>
     </li>
@@ -18,22 +19,25 @@
 <%# Display if there are comments for the tweet, if so place comment box within the drop down at the end %>
     <% if tweet.comments.present? %>
       <div class="dropdown">
-        <div class="comments-btn">Read Post Comments ▼
+        <div class="comments-btn">Read and Add Post Comments
           <i class="fa fa-caret-down"></i>
         </div>
         <div class="dropdown-content tweet-comments">
 
           <% tweet.comments.each do |comment| %>
-            <div>
+            <p>
               <% if comment.user.image.present? %>
                 <%= cl_image_tag(comment.user.image, :class => 'icon') %>
               <% else %>
                 <%= image_tag 'empty-profile-picture.png', :class => 'icon' %>
               <% end %>
 
-              <%= comment.created_at.strftime '%l:%M%P, %e %b' %>
-              <strong><%= comment.user.name %></strong> : <%= comment.body %>
-            </div>
+              <%= comment.created_at.strftime '%l:%M%P, %e %b' %> |
+              <strong><%= comment.user.name %></strong> |
+
+              <%= comment.body %>
+            </p>
+
           <% end %>
           <%= form_with(model: [ tweet, tweet.comments.build], local: true) do |f| %>
             <p>
@@ -42,7 +46,7 @@
             </p>
           <% end %>
           </div>
-          
+
 <%# ## Display comment box on dom if there are not already comments   %>
     <% else %>
       <%= form_with(model: [ tweet, tweet.comments.build], local: true) do |f| %>

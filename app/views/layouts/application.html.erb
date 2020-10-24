@@ -27,7 +27,11 @@
           <button class="dropbtn">
             <div class="row">
               <div class="row right-align icon-position">
-                <%= cl_image_tag(@current_user.image, :class => 'icon') %>
+                <% if @current_user.image %>
+                  <%= cl_image_tag(@current_user.image, :class => 'icon') %>
+                <% else %>
+                  <%= image_tag 'empty-profile-picture.png', :class => 'icon' %>
+                <% end %>
               </div>
               <div class="row right-align">
                 <%= @current_user.name %>
