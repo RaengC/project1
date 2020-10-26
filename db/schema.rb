@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_21_032546) do
+ActiveRecord::Schema.define(version: 2020_10_25_021153) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 2020_10_21_032546) do
     t.text "bio"
     t.text "title"
     t.text "image"
+    t.boolean "admin", default: false
   end
 
   add_foreign_key "comments", "tweets"

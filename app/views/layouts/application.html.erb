@@ -12,7 +12,11 @@
 
   <body>
     <div class="navbar">
-      <% if @current_user.present? %>
+      <% if @current_user.present? && @current_user.admin %>
+        <%= link_to "Social Feed", tweets_path %>
+        <%= link_to "Add Post", new_tweet_path %>
+        <%= link_to "Admin Page", users_path %>
+      <% elsif @current_user.present? %>
         <%= link_to "Social Feed", tweets_path %>
         <%= link_to "Add Post", new_tweet_path %>
         <% else %>
