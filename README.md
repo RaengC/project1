@@ -11,7 +11,7 @@ Class project to create an application with
 * Heroku deployment
 
 ## User Stories with Associated Technical Tasks
-[Trello Link with associated **To Do, Doing, Done** list and associated technical tasks](https://trello.com/invite/b/dXFoKPrs/53f75cd874588a844ab4c7cb5db3b161/twitter-clone)
+[Trello Link with associated **To Do, Doing, Done** list and associated technical tasks](https://trello.com/b/dXFoKPrs/twitter-clone)
 
 ### Key Stories
 * User creates account
